@@ -45,16 +45,19 @@ class ConveyorFacade {
     this.car.setWheels();
     this.car.addElectronic();
     this.car.paint();
+    return this;
   }
 
   changeEngine() {
     this.car.getEngine();
     this.car.setEngine();
+    return this;
   }
 
   changeInterior() {
     this.car.getInterior();
     this.car.setInterior();
+    return this;
   }
 }
 
@@ -77,7 +80,7 @@ console.log(car);
   Wheels!
   Added electronic!
   Car painted!
-  undefined
+  ConveyorFacade { car: Conveyor {} }
 */
 
 /*
@@ -89,8 +92,7 @@ console.log(car);
   включают демонтаж старого и установка нового оборудования.
 */
 
-car = conveyor.changeEngine();
-car = conveyor.changeInterior();
+car = conveyor.changeEngine().changeInterior();
 
 console.log(car);
 /*Body set!
@@ -100,11 +102,11 @@ console.log(car);
   Wheels!
   Added electronic!
   Car painted!
-  undefined
+  ConveyorFacade { car: Conveyor {} }
   Engine set!
   Update interior!
   Exterior added!
-  undefined
+  ConveyorFacade { car: Conveyor {} }
 */
 
 /*
